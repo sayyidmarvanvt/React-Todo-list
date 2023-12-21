@@ -88,3 +88,9 @@ title{
   text-decoration: line-through;
   opacity: 0.3;
 }
+
+@media screen and (max-width: 480px) {
+  #root{
+    padding: 0rem 1rem;
+  }
+}

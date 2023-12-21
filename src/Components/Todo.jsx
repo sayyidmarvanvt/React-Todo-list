@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import  { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 
@@ -45,8 +45,11 @@ function Todo() {
 
   const onEdit = (id) => {
     const edit = datas.find((to) => to.id === id); //getting the id
-    setInput(edit.text); //while click it show the text on input field
-    setEditID(edit.id);
+    if (!edit.status) {
+      // check if the task is not completed
+      setInput(edit.text); //while click it show the text on input field
+      setEditID(edit.id);
+    }
   };
 
   return (
@@ -69,11 +72,6 @@ function Todo() {
 }
 
 export default Todo;
-
-
-
-
-
 
 //using for checkbox
 // const checkboxhandle = (id,e) => {
